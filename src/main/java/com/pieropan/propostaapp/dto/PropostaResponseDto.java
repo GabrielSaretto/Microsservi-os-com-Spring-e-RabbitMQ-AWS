@@ -1,4 +1,4 @@
 package com.pieropan.propostaapp.dto;
 
-public class PropostaDto {
+public class PropostaResponseDto {
 }
