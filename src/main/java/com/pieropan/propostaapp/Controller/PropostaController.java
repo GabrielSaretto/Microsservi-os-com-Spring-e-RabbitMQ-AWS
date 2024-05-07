@@ -1,6 +1,9 @@
 package com.pieropan.propostaapp.Controller;
 
 import com.pieropan.propostaapp.dto.PropostaRequestDto;
+import com.pieropan.propostaapp.dto.PropostaResponseDto;
+import com.pieropan.propostaapp.service.PropostaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,8 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/proposta")
 public class PropostaController {
 
+    @Autowired
+    PropostaService propostaService;
+
     @PostMapping
-    public ResponseEntity criar(@RequestBody PropostaRequestDto requestDto) {
-        return null;
+    public ResponseEntity<PropostaResponseDto> criar(@RequestBody PropostaRequestDto requestDto) {
+        PropostaResponseDto response = propostaService.criar(requestDto);
+        return ResponseEntity.ok(response);
     }
 }
