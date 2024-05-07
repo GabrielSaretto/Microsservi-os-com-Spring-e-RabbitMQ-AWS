@@ -11,7 +11,6 @@ public class PropostaService {
     private PropostaRepository propostaRepository;
 
     public PropostaResponseDto criar(PropostaRequestDto propostaRequestDto){
-        propostaRepository.save();
         return null;
     }
 }
